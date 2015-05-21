@@ -9,6 +9,7 @@ package ohs45;
  *
  * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
  * @author Simon Wieder <16rwieder@orangecsd.org>
+ * @author Michael Litt <17mlitt@orangecsd.org>
  */
 public class Main
 {
