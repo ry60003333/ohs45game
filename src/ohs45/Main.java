@@ -5,8 +5,10 @@
  */
 package ohs45;
 
+import javax.swing.JFrame;
+
 /**
- *
+ * The main class of the game.
  * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
  * @author Simon Wieder <16rwieder@orangecsd.org>
  * @author Michael Litt <17mlitt@orangecsd.org>
@@ -14,13 +16,45 @@ package ohs45;
  */
 public class Main
 {
+    
+    /**
+     * The width of the game.
+     */
+    private static final int WIDTH = 300;
+    
+    /**
+     * The height of the game.
+     */
+    private static final int HEIGHT = 300;
+    
+    /**
+     * Creates a new instance of the class Main.
+     */
+    public Main()
+    {
+        // Create a window
+        JFrame frame = new JFrame();
+        
+        frame.setTitle("OHS 45 Game");
+        frame.setSize(WIDTH, HEIGHT);
+        
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Center the window
+        frame.setLocationRelativeTo(null);
+        
+        // Make the window visible
+        frame.setVisible(true);
+    }
 
     /**
-     * @param args the command line arguments
+     * The main method.
+     * @param args The command line arguments.
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        Main game = new Main();
     }
     
 }
