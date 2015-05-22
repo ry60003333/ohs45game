@@ -13,6 +13,7 @@ import javax.swing.JFrame;
  * @author Simon Wieder <16rwieder@orangecsd.org>
  * @author Michael Litt <17mlitt@orangecsd.org>
  * @author Mr. McMonigle <rmcmonigle@orangecsd.org>
+ * @author Mrs. Cingel
  */
 public class Main
 {
