@@ -21,7 +21,7 @@ public class Main
     /**
      * The width of the game.
      */
-    private static final int WIDTH = 350;
+    private static final int WIDTH = 200;
     
     /**
      * The height of the game.
