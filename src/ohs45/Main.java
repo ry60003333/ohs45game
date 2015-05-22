@@ -36,7 +36,7 @@ public class Main
         // Create a window
         JFrame frame = new JFrame();
         
-        frame.setTitle("OHS 45 Game");
+        frame.setTitle("Pixel Smasher");
         frame.setSize(WIDTH, HEIGHT);
         
         frame.setResizable(false);
