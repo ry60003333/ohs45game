@@ -42,7 +42,7 @@ public class Game extends JPanel
         
         // Draw the border
         g.setColor(Color.red);
-        g.drawRect(0, 0, 343, 250);
+        g.drawRect(0, 0, 349, 250);
     }
     
 }
