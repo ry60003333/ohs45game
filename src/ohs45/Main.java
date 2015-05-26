@@ -68,4 +68,13 @@ public class Main
         Main game = new Main();
     }
     
+    /**
+     * Get the width of the frame.
+     * @return The width.
+     */
+    public static int getWidth()
+    {
+        return WIDTH;
+    }
+    
 }

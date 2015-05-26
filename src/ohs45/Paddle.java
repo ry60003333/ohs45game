@@ -17,9 +17,14 @@ public class Paddle extends Rectangle
 {
     
     /**
+     * The width of the paddle.
+     */
+    private static final int PADDLE_WIDTH = 40;
+    
+    /**
      * The starting X position.
      */
-    private static final int START_X = 160;
+    private static final int START_X = (Main.getWidth() / 2) - (PADDLE_WIDTH / 2);
     
     /**
      * The starting Y position.
@@ -31,7 +36,7 @@ public class Paddle extends Rectangle
      */
     public Paddle()
     {
-        super(START_X, START_Y, 40, 5);
+        super(START_X, START_Y, PADDLE_WIDTH, 5);
     }
     
     /**

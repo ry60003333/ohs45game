@@ -10,7 +10,7 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
- *
+ * The main class of the game.
  * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
  */
 public class Game extends JPanel
@@ -19,13 +19,20 @@ public class Game extends JPanel
     /**
      * The paddle.
      */
-    private Paddle paddle;
+    private final Paddle paddle;
     
+    /**
+     * Creates a new Game.
+     */
     public Game()
     {
         paddle = new Paddle();
     }
     
+    /**
+     * Draw the game.
+     * @param g The graphics context.
+     */
     @Override
     public void paint(Graphics g)
     {
