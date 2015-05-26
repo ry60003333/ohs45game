@@ -5,6 +5,8 @@
  */
 package ohs45;
 
+import java.awt.BorderLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -44,6 +46,14 @@ public class Main
         
         // Center the window
         frame.setLocationRelativeTo(null);
+        
+        // Add the restart button
+        JButton restartButton = new JButton("Restart");
+        frame.add(restartButton, BorderLayout.SOUTH);
+        
+        // Add the game
+        Game game = new Game();
+        frame.add(game);
         
         // Make the window visible
         frame.setVisible(true);
