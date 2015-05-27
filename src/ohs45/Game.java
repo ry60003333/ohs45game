@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  * The main class of the game.
- * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
+ * @author OHS AP Computer Science 4/5
  */
 public class Game extends JPanel
 {

@@ -10,8 +10,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- *
- * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
+ * The paddle of the game.
+ * @author OHS AP Computer Science 4/5
  */
 public class Paddle extends Rectangle
 {
