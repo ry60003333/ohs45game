@@ -7,13 +7,16 @@ package ohs45;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  * The main class of the game.
  * @author OHS AP Computer Science 4/5
  */
-public class Game extends JPanel
+public class Game extends JPanel implements ActionListener
 {
     
     /**
@@ -27,6 +30,12 @@ public class Game extends JPanel
     public Game()
     {
         paddle = new Paddle();
+        
+        addKeyListener(paddle);
+        setFocusable(true);
+        
+        Timer timer = new Timer(1000/60, this);
+        timer.start();
     }
     
     /**
@@ -45,11 +54,18 @@ public class Game extends JPanel
         g.fillRect(0, 251, 450, 200);
         
         // Draw the paddle
+        paddle.move();
         paddle.draw(g);
         
         // Draw the border
         g.setColor(Color.red);
         g.drawRect(0, 0, 349, 250);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        repaint();
     }
     
 }
