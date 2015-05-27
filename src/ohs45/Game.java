@@ -24,12 +24,15 @@ public class Game extends JPanel implements ActionListener
      */
     private final Paddle paddle;
     
+    private final Ball ball;
+    
     /**
      * Creates a new Game.
      */
     public Game()
     {
         paddle = new Paddle();
+        ball = new Ball();
         
         addKeyListener(paddle);
         setFocusable(true);
@@ -56,6 +59,11 @@ public class Game extends JPanel implements ActionListener
         // Draw the paddle
         paddle.move();
         paddle.draw(g);
+        
+        // Draw the ball
+        ball.move();
+        ball.handlePaddleCollision(paddle);
+        ball.draw(g);
         
         // Draw the border
         g.setColor(Color.red);
