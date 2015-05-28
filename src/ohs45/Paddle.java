@@ -67,7 +67,7 @@ public class Paddle extends Rectangle implements KeyListener
      */
     public void draw(Graphics g)
     {
-        g.setColor(Color.GREEN);
+        g.setColor(Color.BLACK);
         g.fill3DRect(x, y, width, height, true);
     }
     

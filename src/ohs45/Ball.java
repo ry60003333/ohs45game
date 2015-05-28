@@ -100,7 +100,7 @@ public class Ball extends Rectangle
      */
     public void draw(Graphics g)
     {
-        g.setColor(Color.BLUE);
+        g.setColor(Color.CYAN);
         g.fillOval(x, y, width, height);
     }
 
