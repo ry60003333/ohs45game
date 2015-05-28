@@ -8,8 +8,13 @@ package ohs45;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
 
 /**
  * The main class of the game.
@@ -62,6 +67,28 @@ public class Main implements ActionListener
         
         // Make the window visible
         frame.setVisible(true);
+        
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run()
+            {
+                try
+                {
+                    InputStream resourceAsStream = getClass().getResourceAsStream("/ohs45/music/1990.mp3");
+                    final Player player = new Player(resourceAsStream);
+                    while (true)
+                    {
+                        player.play();
+                    }
+                } catch (JavaLayerException ex)
+                {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        thread.start();
+        
     }
 
     /**
