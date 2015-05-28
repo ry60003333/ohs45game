@@ -61,7 +61,7 @@ public class Game extends JPanel implements ActionListener
     public void paint(Graphics g)
     {
         // Draw the background
-        g.setColor(Color.ORANGE);
+        g.setColor(Color.orange);
         g.fillRect(0, 0, 350, 450);
         
         // Draw the bottom background
