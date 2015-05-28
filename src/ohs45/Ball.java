@@ -28,12 +28,12 @@ public class Ball extends Rectangle
     /**
      * The velocity of the ball in the X direction.
      */
-    private int velocityX = -1;
+    private int velocityX = -2;
     
     /**
      * The velocity of the ball in the Y direction.
      */
-    private int velocityY = -1;
+    private int velocityY = -2;
     
     /**
      * Creates a new Ball.
@@ -108,7 +108,7 @@ public class Ball extends Rectangle
     {
         x = START_X;
         y = START_Y;
-        velocityX = -1;
-        velocityY = -1;
+        velocityX = -2;
+        velocityY = -2;
     }
 }
