@@ -52,6 +52,7 @@ public class Ball extends Rectangle
         if (this.intersects(paddle))
         {
             velocityY = -velocityY;
+            y = paddle.y - height;
         }
     }
     
