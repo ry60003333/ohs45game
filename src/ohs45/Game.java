@@ -29,6 +29,14 @@ public class Game extends JPanel implements ActionListener
      */
     private final Ball ball;
     
+    private String message = "";
+    
+    private boolean displayBall = true;
+    
+    private Brick[] bricks;
+    
+    private int bricksBroken = 0;
+    
     /**
      * Creates a new Game.
      */
@@ -36,6 +44,7 @@ public class Game extends JPanel implements ActionListener
     {
         paddle = new Paddle();
         ball = new Ball();
+        bricks = Brick.makeBricks();
         
         addKeyListener(paddle);
         setFocusable(true);
@@ -63,14 +72,41 @@ public class Game extends JPanel implements ActionListener
         paddle.move();
         paddle.draw(g);
         
+        for (Brick next : bricks)
+        {
+            if (next != null)
+            {
+                next.draw(g);
+            }
+        }
+        
+        bricksBroken += ball.handleBrickCollision(bricks);
+        if (bricksBroken == Brick.BRICK_COUNT)
+        {
+            message = "You won!";
+            displayBall = false;
+        }
+        
         // Draw the ball
-        ball.move();
-        ball.handlePaddleCollision(paddle);
-        ball.draw(g);
+        if (displayBall)
+        {
+            ball.move();
+            ball.handlePaddleCollision(paddle);
+            ball.draw(g);
+            
+            if (ball.y >= 250)
+            {
+                message = "You lose the game!";
+                displayBall = false;
+            }
+        }
         
         // Draw the border
         g.setColor(Color.red);
         g.drawRect(0, 0, 349, 250);
+        
+        // Draw the message
+        g.drawString(message, 70, 120);
     }
 
     /**
@@ -81,6 +117,17 @@ public class Game extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         repaint();
+    }
+
+    public void restart()
+    {
+        this.requestFocus();
+        message = "";
+        ball.reset();
+        paddle.reset();
+        bricks = Brick.makeBricks();
+        bricksBroken = 0;
+        displayBall = true;
     }
     
 }

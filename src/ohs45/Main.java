@@ -6,6 +6,8 @@
 package ohs45;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -17,7 +19,7 @@ import javax.swing.JFrame;
  * @author Mr. McMonigle <rmcmonigle@orangecsd.org>
  * @author Mrs. Cingel
  */
-public class Main
+public class Main implements ActionListener
 {
     
     /**
@@ -29,6 +31,8 @@ public class Main
      * The height of the game.
      */
     private static final int HEIGHT = 450;
+    
+    private final Game game;
     
     /**
      * Creates a new instance of the class Main.
@@ -49,10 +53,11 @@ public class Main
         
         // Add the restart button
         JButton restartButton = new JButton("Restart");
+        restartButton.addActionListener(this);
         frame.add(restartButton, BorderLayout.SOUTH);
         
         // Add the game
-        Game game = new Game();
+        game = new Game();
         frame.add(game);
         
         // Make the window visible
@@ -75,6 +80,12 @@ public class Main
     public static int getWidth()
     {
         return WIDTH;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        game.restart();
     }
     
 }

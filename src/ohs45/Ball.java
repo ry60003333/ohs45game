@@ -55,6 +55,26 @@ public class Ball extends Rectangle
         }
     }
     
+    public int handleBrickCollision(Brick[] bricks)
+    {
+        int count = 0;
+        
+        for (int i = 0; i < bricks.length; i++)
+        {
+            if (bricks[i] != null)
+            {
+                if (bricks[i].intersects(this))
+                {
+                    bricks[i] = null;
+                    count++;
+                    velocityY = -velocityY;
+                }
+            }
+        }
+        
+        return count;
+    }
+    
     /**
      * Move the ball.
      */
@@ -82,5 +102,13 @@ public class Ball extends Rectangle
     {
         g.setColor(Color.BLUE);
         g.fillOval(x, y, width, height);
+    }
+
+    public void reset()
+    {
+        x = START_X;
+        y = START_Y;
+        velocityX = -1;
+        velocityY = -1;
     }
 }
