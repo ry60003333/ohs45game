@@ -11,7 +11,7 @@ import java.awt.Rectangle;
 
 /**
  * The ball.
- * @author 
+ * @author OHS AP Computer Science 4/5
  */
 public class Ball extends Rectangle
 {
@@ -28,12 +28,12 @@ public class Ball extends Rectangle
     /**
      * The velocity of the ball in the X direction.
      */
-    private int velocityX = -2;
+    private int velocityX;
     
     /**
      * The velocity of the ball in the Y direction.
      */
-    private int velocityY = -2;
+    private int velocityY;
     
     /**
      * Creates a new Ball.
@@ -41,6 +41,7 @@ public class Ball extends Rectangle
     public Ball()
     {
         super(START_X, START_Y, 5, 5);
+        reset();
     }
     
     /**
@@ -56,6 +57,11 @@ public class Ball extends Rectangle
         }
     }
     
+    /**
+     * Handle collision with the bricks.
+     * @param bricks The array of bricks.
+     * @return The amount of bricks that the ball collided with.
+     */
     public int handleBrickCollision(Brick[] bricks)
     {
         int count = 0;
@@ -105,7 +111,10 @@ public class Ball extends Rectangle
         g.fillOval(x, y, width, height);
     }
 
-    public void reset()
+    /**
+     * Reset the ball to it's default state.
+     */
+    public final void reset()
     {
         x = START_X;
         y = START_Y;

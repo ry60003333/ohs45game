@@ -9,23 +9,41 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- *
- * @author Ryan Rule-Hoffman <ryan.rulehoffman@icloud.com>
+ * A brick in the game.
+ * @author OHS AP Computer Science 4/5
  */
 public class Brick extends Rectangle
 {
     
+    /**
+     * The starting X coordinates to spawn bricks at.
+     */
     public static final int START_X = 70;
     
+    /**
+     * The starting Y coordinate to spawn bricks at.
+     */
     public static final int START_Y = 50;
     
+    /**
+     * The amount of bricks to spawn.
+     */
     public static final int BRICK_COUNT = 12;
     
+    /**
+     * Creates a new Brick.
+     * @param x The X coordinate of the brick.
+     * @param y The Y coordinate of the brick.
+     */
     public Brick(int x, int y)
     {
         super(x, y, 30, 10);
     }
     
+    /**
+     * Create an array of bricks.
+     * @return The array of bricks.
+     */
     public static Brick[] makeBricks()
     {
         Brick[] bricks = new Brick[BRICK_COUNT];
