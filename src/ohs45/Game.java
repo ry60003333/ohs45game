@@ -61,11 +61,11 @@ public class Game extends JPanel implements ActionListener
     public void paint(Graphics g)
     {
         // Draw the background
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.RED);
         g.fillRect(0, 0, 350, 450);
         
         // Draw the bottom background
-        g.setColor(Color.GRAY);
+        g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 251, 450, 200);
         
         // Draw the paddle
@@ -102,7 +102,7 @@ public class Game extends JPanel implements ActionListener
         }
         
         // Draw the border
-        g.setColor(Color.red);
+        g.setColor(Color.BLUE);
         g.drawRect(0, 0, 349, 250);
         
         // Draw the message
