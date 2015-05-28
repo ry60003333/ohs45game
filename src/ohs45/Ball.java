@@ -20,17 +20,33 @@ public class Ball extends Rectangle
      */
     private static final int START_X = (Main.getWidth() / 2) - (40 / 2);
     
+    /**
+     * The starting Y position.
+     */
     private static final int START_Y = 218;
     
+    /**
+     * The velocity of the ball in the X direction.
+     */
     private int velocityX = -1;
     
+    /**
+     * The velocity of the ball in the Y direction.
+     */
     private int velocityY = -1;
     
+    /**
+     * Creates a new Ball.
+     */
     public Ball()
     {
         super(START_X, START_Y, 5, 5);
     }
     
+    /**
+     * Handle collision between the ball and the paddle.
+     * @param paddle The paddle.
+     */
     public void handlePaddleCollision(Paddle paddle)
     {
         if (this.intersects(paddle))
@@ -39,6 +55,9 @@ public class Ball extends Rectangle
         }
     }
     
+    /**
+     * Move the ball.
+     */
     public void move()
     {
         x += velocityX;

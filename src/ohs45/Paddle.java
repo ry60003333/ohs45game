@@ -18,10 +18,19 @@ import java.awt.event.KeyListener;
 public class Paddle extends Rectangle implements KeyListener
 {
     
+    /**
+     * The constant for no direction.
+     */
     private static final int DIRECTION_NONE = 0;
     
+    /**
+     * The constant for the left direction.
+     */
     private static final int DIRECTION_LEFT = 1;
     
+    /**
+     * The constant for the right direction.
+     */
     private static final int DIRECTION_RIGHT = 2;
     
     /**
@@ -62,6 +71,9 @@ public class Paddle extends Rectangle implements KeyListener
         g.fill3DRect(x, y, width, height, true);
     }
     
+    /**
+     * Move the paddle in the current direction.
+     */
     public void move()
     {
         if (direction == DIRECTION_LEFT)
@@ -83,12 +95,20 @@ public class Paddle extends Rectangle implements KeyListener
         }
     }
 
+    /**
+     * Called when a key is typed.
+     * @param e The event.
+     */
     @Override
     public void keyTyped(KeyEvent e)
     {
-        
+        // We don't use this for the game
     }
 
+    /**
+     * Called when a key is pressed.
+     * @param e The key event.
+     */
     @Override
     public void keyPressed(KeyEvent e)
     {
@@ -103,6 +123,10 @@ public class Paddle extends Rectangle implements KeyListener
         }
     }
 
+    /**
+     * Called when a key is released.
+     * @param e The key event.
+     */
     @Override
     public void keyReleased(KeyEvent e)
     {

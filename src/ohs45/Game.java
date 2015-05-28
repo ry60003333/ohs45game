@@ -24,6 +24,9 @@ public class Game extends JPanel implements ActionListener
      */
     private final Paddle paddle;
     
+    /**
+     * The ball.
+     */
     private final Ball ball;
     
     /**
@@ -70,6 +73,10 @@ public class Game extends JPanel implements ActionListener
         g.drawRect(0, 0, 349, 250);
     }
 
+    /**
+     * Called when the timer fires.
+     * @param e The event.
+     */
     @Override
     public void actionPerformed(ActionEvent e)
     {
