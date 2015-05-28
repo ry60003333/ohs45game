@@ -68,25 +68,7 @@ public class Main implements ActionListener
         // Make the window visible
         frame.setVisible(true);
         
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run()
-            {
-                try
-                {
-                    InputStream resourceAsStream = getClass().getResourceAsStream("/ohs45/music/1990.mp3");
-                    final Player player = new Player(resourceAsStream);
-                    while (true)
-                    {
-                        player.play();
-                    }
-                } catch (JavaLayerException ex)
-                {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
+        Thread thread = new Thread(new MusicPlayer());
         thread.start();
         
     }
