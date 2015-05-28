@@ -12,11 +12,15 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 /**
- *
+ * The music player.
  * @author Simon
  */
 public class MusicPlayer implements Runnable
 {
+    
+    /**
+     * Play the music.
+     */
     @Override
     public void run()
     {
@@ -30,7 +34,7 @@ public class MusicPlayer implements Runnable
             }
         } catch (JavaLayerException ex)
         {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MusicPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
