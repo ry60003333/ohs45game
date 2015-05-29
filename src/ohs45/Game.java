@@ -29,12 +29,24 @@ public class Game extends JPanel implements ActionListener
      */
     private final Ball ball;
     
+    /**
+     * The current message to display on the screen.
+     */
     private String message = "";
     
-    private boolean displayBall = true;
-    
+    /**
+     * The array of bricks.
+     */
     private Brick[] bricks;
     
+    /**
+     * Should the ball be displayed on the screen.
+     */
+    private boolean displayBall = true;
+    
+    /**
+     * The count of how many bricks the player has broken.
+     */
     private int bricksBroken = 0;
     
     /**
@@ -119,6 +131,9 @@ public class Game extends JPanel implements ActionListener
         repaint();
     }
 
+    /**
+     * Restart the game.
+     */
     public void restart()
     {
         this.requestFocus();

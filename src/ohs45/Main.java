@@ -8,13 +8,8 @@ package ohs45;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
 
 /**
  * The main class of the game.
@@ -37,6 +32,9 @@ public class Main implements ActionListener
      */
     private static final int HEIGHT = 450;
     
+    /**
+     * The instance of the game.
+     */
     private final Game game;
     
     /**
@@ -68,6 +66,7 @@ public class Main implements ActionListener
         // Make the window visible
         frame.setVisible(true);
         
+        // Start the background music
         Thread thread = new Thread(new MusicPlayer());
         thread.start();
         
@@ -91,6 +90,10 @@ public class Main implements ActionListener
         return WIDTH;
     }
 
+    /**
+     * Called when the restart button is pressed.
+     * @param e The event.
+     */
     @Override
     public void actionPerformed(ActionEvent e)
     {

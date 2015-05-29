@@ -147,6 +147,9 @@ public class Paddle extends Rectangle implements KeyListener
         }
     }
 
+    /**
+     * Reset the position of the paddle.
+     */
     public void reset()
     {
         x = START_X;

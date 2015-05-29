@@ -69,6 +69,10 @@ public class Brick extends Rectangle
         return bricks;
     }
 
+    /**
+     * Draw the brick.
+     * @param g The graphics context.
+     */
     public void draw(Graphics g)
     {
         g.fill3DRect(x, y, width, height, true);
