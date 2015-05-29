@@ -25,17 +25,21 @@ public class Main implements ActionListener
     /**
      * The width of the game.
      */
-    private static final int WIDTH = 350;
+    public static final int WIDTH = 350;
     
     /**
      * The height of the game.
      */
-    private static final int HEIGHT = 450;
+    public static final int HEIGHT = 450;
     
     /**
      * The instance of the game.
      */
     private final Game game;
+    
+    private final JButton restartButton;
+    
+    private final JFrame frame;
     
     /**
      * Creates a new instance of the class Main.
@@ -43,7 +47,7 @@ public class Main implements ActionListener
     public Main()
     {
         // Create a window
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         
         frame.setTitle("Pixel Smasher");
         frame.setSize(WIDTH, HEIGHT);
@@ -55,13 +59,16 @@ public class Main implements ActionListener
         frame.setLocationRelativeTo(null);
         
         // Add the restart button
-        JButton restartButton = new JButton("Restart");
+        restartButton = new JButton("Restart");
         restartButton.addActionListener(this);
         frame.add(restartButton, BorderLayout.SOUTH);
+        restartButton.setVisible(false);
         
         // Add the game
         game = new Game();
-        frame.add(game);
+        
+        TitleScreen titleScreen = new TitleScreen(this);
+        frame.add(titleScreen);
         
         // Make the window visible
         frame.setVisible(true);
@@ -70,6 +77,14 @@ public class Main implements ActionListener
         Thread thread = new Thread(new MusicPlayer());
         thread.start();
         
+    }
+    
+    public void startGame()
+    {
+        frame.add(game);
+        game.setVisible(true);
+        game.requestFocus();
+        restartButton.setVisible(true);
     }
 
     /**
