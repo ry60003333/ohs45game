@@ -10,6 +10,30 @@
 <project name="OHS45" default="default" basedir=".">
     <description>Builds, tests, and runs the project OHS45.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <target name="-post-jar">
+        
+        <taskdef name="jarbundler" classname="net.sourceforge.jarbundler.JarBundler">
+            <classpath>
+                <pathelement location="${build.dir}/../libraries/jarbundler-2.1.0.jar"/>
+            </classpath>
+        </taskdef>
+        
+        <property name="launch4j.dir" location="${build.dir}/../libraries/launch4j" />
+        <taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar :${launch4j.dir}/lib/xstream.jar" />
+        
+        <jar update="true" destfile="${dist.jar}">
+            <zipfileset src="${build.dir}/../libraries/jl1.0.1.jar"/>
+        </jar>
+        
+        <jarbundler dir="${dist.dir}" name="Pixel Smasher" mainclass="ohs45.Main" vmoptions="-Xmx256M" jar="${dist.jar}" icon="${build.dir}/../src/ohs45/graphics/icon.icns" arguments="" />
+        
+        <launch4j configFile="${dist.dir}/../launch4j.xml" />
+        
+        <move file="Pixel Smasher.exe" todir="dist/" />
+        
+    </target>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
